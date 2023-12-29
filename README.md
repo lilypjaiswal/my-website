@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+linear gradient 90, colors: #0cc0df & #ffde59
 
 ## Available Scripts
 
