@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -12,6 +13,10 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+
+import { FormControl, FormLabel } from '@mui/material';
+
+import './Contact.css';
 
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
@@ -32,12 +37,26 @@ export const Contact = () => {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
+    {/* inputref prop for mui form */}
+{/*      
       <input type="text" name="user_name" />
-      <label>Email</label>
+      
       <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
+      
+      <textarea name="message" /> */}
+      <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+     <TextField id="first-name" label="Firstname" variant="outlined" />
+      <TextField id="last-name" label="Lastname" variant="outlined" />
+      <TextField id="email" label="Email" variant="outlined" />
+      <TextField id="Message" label="Message" variant="outlined" />
+    </Box>
       <input type="submit" value="Send" />
     </form>
   );
